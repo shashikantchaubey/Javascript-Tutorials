@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM HTML</title>
+</head>
+<body style="background-color: black; color:white">
+
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+   
+    
+</body>
+
+<script>
+
+    function addLang(Lang){
+        const li = document.createElement('li');
+        li.innerHTML = ` ${Lang}`;
+        li.style.color = 'orange';
+        li.style.padding = '10px';
+        li.style.border = "dotted"
+        // li.style.borderColor = 'white'
+        li.style.borderRadius = "50%"
+
+        document.querySelector('.language').appendChild(li)
+
+
+    }
+
+    function addoptiLang(Lang){
+        const li = document.createElement('li');
+
+        li.appendChild(document.createTextNode(Lang));
+        document.querySelector('.language').appendChild(li);
+
+    }
+
+    addLang("Python")
+    addLang("Java")
+    addoptiLang('TypeScript')
+
+    // Edit
+
+    const secondLang= document.querySelector("li:nth-child(2)");
+    const newLine = document.createElement('li');
+    newLine.textContent = 'Mojo';
+    secondLang.replaceWith(newLine);
+
+    //remove element
+
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+
+
+</script>
+</html>
